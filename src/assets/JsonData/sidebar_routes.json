@@ -1,0 +1,47 @@
+[
+    {
+        "display_name": "Dashboard",
+        "route": "/",
+        "icon": "bx bx-category-alt"
+    },
+    {
+        "display_name": "Customers",
+        "route": "/customers",
+        "icon": "bx bx-user-pin"
+    },
+    {
+        "display_name": "Quản Lý Danh Mục",
+        "route": "/category",
+        "icon": "bx bx-package"
+    },
+    {
+        "display_name": "Quản Lý Phim",
+        "route": "/film",
+        "icon": "bx bx-cart"
+    },
+    {
+        "display_name": "Quản lý rạp chiếu",
+        "route": "/theater",
+        "icon": "bx bx-bar-chart-alt"
+    },
+    {
+        "display_name": "Quản lý phòng chiếu",
+        "route": "/room",
+        "icon": "bx bx-list-ol"
+    },
+    {
+        "display_name": "Quản lý lịch chiếu",
+        "route": "/schedule",
+        "icon": "bx bx-gift"
+    },
+    {
+        "display_name": "Quản lý ghế",
+        "route": "/seat",
+        "icon": "bx bx-store-alt"
+    },
+    {
+        "display_name": "Quản lý vé",
+        "route": "/ticket",
+        "icon": "bx bx-cog"
+    }
+]

@@ -1,0 +1,16 @@
+.layout {
+    color: var(--txt-color);
+}
+
+.layout__content {
+    padding-left: var(--sidebar-width);
+    background-color: var(--second-bg);
+    min-height: 150vh;
+    max-height: 1000vh;
+    height: 100%;
+}
+
+.layout__content-main {
+    padding: 20px 30px;
+    height: 100%;
+}
