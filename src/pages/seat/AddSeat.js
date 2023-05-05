@@ -77,23 +77,25 @@ const AddSeat = () => {
 
         for (let i = 0; i < seats.length; i++) {
             const data = {
-                roomId: selectedRoom,
+                scheduleId: selectedRoom,
                 name: seats[i].name,
                 type: seats[i].type,
                 status: 1
             };
             axios.post("https://localhost:7228/DMP/Seat", data, config)
                 .then(res => {
-                    // navigate("/seat");
+                    navigate("/seat");
                 })
         }
     };
 
     useEffect(() => {
-        axios.get("https://localhost:7228/DMP/Room", config).then((response) => {
+        axios.get("https://localhost:7228/DMP/FilmSchedules", config).then((response) => {
             setRooms(response.data);
         });
     }, []);
+
+    console.log(rooms)
 
     return (
         <form onSubmit={handleSubmit}>
@@ -102,7 +104,7 @@ const AddSeat = () => {
                 <InputSelected value={selectedRoom} onChange={(e) => setSelectedRoom(e.target.value)} optionName="Chọn phòng">
                     {rooms.data?.result?.map((room) => (
                         <option key={room.id} value={room.id}>
-                            {room.name} - {room.theaterName}
+                            {room.roomName} - {room.theaterName}
                         </option>
                     ))}
                 </InputSelected>

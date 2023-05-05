@@ -19,7 +19,6 @@ import Seat from "./pages/seat/Seat";
 import Ticket from "./pages/ticket/Ticket";
 import AddTicket from "./pages/ticket/AddTicket";
 
-
 const App = () => {
     return (
         <Routes>
@@ -46,6 +45,8 @@ const App = () => {
 
                 <Route path="/ticket" element={<Layout><Ticket /></Layout>} />
                 <Route path="/add-ticket" element={<Layout><AddTicket /></Layout>} />
+
+
 
             <Route path="/login" element={<Login></Login>} />
         </Routes>

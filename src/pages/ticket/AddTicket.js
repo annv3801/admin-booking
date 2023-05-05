@@ -37,7 +37,7 @@ const AddTicket = () => {
         };
         axios.post("https://localhost:7228/DMP/Ticket", data, config)
             .then(res => {
-                navigate("/film");
+                navigate("/ticket");
             })
     }
     useEffect(() => {

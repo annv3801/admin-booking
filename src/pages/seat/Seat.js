@@ -34,6 +34,7 @@ const Seat = () => {
     //             }
     //         })
     // }
+    console.log(film)
     return (
         <div>
             <h1 className="mt-3 text-3xl font-medium text-center">Quản lý Ghế</h1>
