@@ -35,20 +35,28 @@ const AddFilm = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {
-            name: name,
-            shortenUrl: shortenUrl,
-            categoryId: selectedCategory,
-            description: description,
-            director: director,
-            actor: actor,
-            genre: genre,
-            premiere: premiere,
-            duration: duration,
-            language: language,
-            rated: rated
-        };
-        axios.post("https://localhost:7228/DMP/Film", data, config)
+        const data = new FormData();
+        data.append("name", name);
+        data.append("shortenUrl", shortenUrl);
+        data.append("categoryId", selectedCategory);
+        data.append("description", description);
+        data.append("director", director);
+        data.append("actor", actor);
+        data.append("genre", genre);
+        data.append("premiere", premiere);
+        data.append("duration", duration);
+        data.append("language", language);
+        data.append("rated", rated);
+        data.append(
+            "image",
+            document.getElementById("image").files[0],
+        );
+
+        axios.post("https://localhost:7228/DMP/Film", data, config, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        })
             .then(res => {
                 navigate("/film");
             })
@@ -63,11 +71,12 @@ const AddFilm = () => {
         let path = "/film";
         navigate(path)
     }
+
     return (
         <div>
             <h1 className='mt-3 text-3xl font-medium text-center'>Thêm Danh Mục</h1>
             <Button className="w-40 bg-red-500" onClick={routeChange}>Quay lại</Button>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <Field className='mt-3'>
                     <Label className='text-lg' htmlFor='name'>Tên Danh Mục</Label>
                     <InputChangeBackground placeholder="Nhập tên danh mục" id="name" onChange={(e)=> setName(e.target.value)}></InputChangeBackground>
@@ -75,6 +84,10 @@ const AddFilm = () => {
                 <Field className='mt-3'>
                     <Label className='text-lg' htmlFor='shortenUrl'>Url rút gọn</Label>
                     <InputChangeBackground placeholder="Nhập url rút gọn" id="shortenUrl" onChange={(e)=> setShotenUrl(e.target.value)}></InputChangeBackground>
+                </Field>
+                <Field className='mt-3'>
+                    <Label className='text-lg' htmlFor='shortenUrl'>Hình ảnh</Label>
+                    <InputChangeBackground type="file" id="image"></InputChangeBackground>
                 </Field>
                 <Field className='mt-3'>
                     <Label className='text-lg' htmlFor='description'>Mô tả</Label>
