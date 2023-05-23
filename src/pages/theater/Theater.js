@@ -15,7 +15,7 @@ const Theater = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/Theater", config)
+        axios.get("http://localhost:5233/view-list-theater", config)
             .then(res => {
                 const listTheater = res.data;
                 setTheater(listTheater)

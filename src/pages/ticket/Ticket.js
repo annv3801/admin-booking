@@ -15,7 +15,7 @@ const Ticket = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/Ticket", config)
+        axios.get("http://localhost:5233/view-list-ticket", config)
             .then(res => {
                 const listTicket = res.data;
                 setTicket(listTicket)

@@ -35,13 +35,13 @@ const AddTicket = () => {
             type: type,
 
         };
-        axios.post("https://localhost:7228/DMP/Ticket", data, config)
+        axios.post("http://localhost:5233/create-ticket", data, config)
             .then(res => {
                 navigate("/ticket");
             })
     }
     useEffect(() => {
-        axios.get("https://localhost:7228/DMP/FilmSchedules", config).then((response) => {
+        axios.get("http://localhost:5233/view-list-schedule", config).then((response) => {
             setSchedule(response.data);
             console.log(response.data)
         });

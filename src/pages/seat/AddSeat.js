@@ -82,7 +82,7 @@ const AddSeat = () => {
                 type: seats[i].type,
                 status: 1
             };
-            axios.post("https://localhost:7228/DMP/Seat", data, config)
+            axios.post("http://localhost:5233/create-seat", data, config)
                 .then(res => {
                     navigate("/seat");
                 })
@@ -90,7 +90,7 @@ const AddSeat = () => {
     };
 
     useEffect(() => {
-        axios.get("https://localhost:7228/DMP/FilmSchedules", config).then((response) => {
+        axios.get("http://localhost:5233/view-list-schedule", config).then((response) => {
             setRooms(response.data);
         });
     }, []);

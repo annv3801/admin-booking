@@ -15,7 +15,7 @@ const Schedule = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/FilmSchedules", config)
+        axios.get("http://localhost:5233/view-list-schedule", config)
             .then(res => {
                 const listSchedule = res.data;
                 setSchedule(listSchedule)
@@ -27,7 +27,7 @@ const Schedule = () => {
     useEffect(() => res(), []);
     let stt = 1
     const handleDelete = (id) => {
-        axios.delete("https://localhost:7228/DMP/FilmSchedules/" + id, config)
+        axios.delete("http://localhost:5233/delete-schedule" + id, config)
             .then(res => {
                 if (res.status === 200) {
                     window.location.reload()

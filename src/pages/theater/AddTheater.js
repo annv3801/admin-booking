@@ -29,7 +29,7 @@ const AddTheater = () => {
             address: address,
             status: status
         };
-        axios.post("https://localhost:7228/DMP/Theater", data, config)
+        axios.post("http://localhost:5233/create-theater", data, config)
             .then(res => {
                 navigate("/theater");
             })

@@ -15,7 +15,7 @@ const Room = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/Room", config)
+        axios.get("http://localhost:5233/view-list-room", config)
             .then(res => {
                 const listRoom = res.data;
                 setRoom(listRoom)
@@ -27,7 +27,7 @@ const Room = () => {
     useEffect(() => res(), []);
     let stt = 1
     const handleDelete = (id) => {
-        axios.delete("https://localhost:7228/DMP/Room/" + id, config)
+        axios.delete("http://localhost:5233/delete-room" + id, config)
             .then(res => {
                 if (res.status === 200) {
                     window.location.reload()

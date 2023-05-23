@@ -15,7 +15,7 @@ const Category = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/Category", config)
+        axios.get("http://localhost:5233/view-list-category", config)
             .then(res => {
                 const listCategory = res.data;
                 setCategory(listCategory)
@@ -31,7 +31,7 @@ const Category = () => {
     // }
     let stt = 1
     const handleDelete = (id) => {
-        axios.delete("https://localhost:7228/DMP/Category/" + id, config)
+        axios.delete("http://localhost:5233/delete-category/" + id, config)
             .then(res => {
                 if (res.status === 200) {
                     window.location.reload()

@@ -15,7 +15,7 @@ const Film = () => {
         }
     };
     const res = () => {
-        axios.get("https://localhost:7228/DMP/Film", config)
+        axios.get("http://localhost:5233/view-list-film", config)
             .then(res => {
                 const listFilm = res.data;
                 setFilm(listFilm)

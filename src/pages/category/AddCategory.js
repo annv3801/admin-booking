@@ -29,7 +29,7 @@ const AddCategory = () => {
             shortenUrl: shortenUrl,
             status: status
         };
-        axios.post("https://localhost:7228/DMP/Category", data, config)
+        axios.post("http://localhost:5233/create-category", data, config)
             .then(res => {
                 navigate("/category");
             })
