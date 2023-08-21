@@ -15,7 +15,7 @@ const Ticket = () => {
         }
     };
     const res = () => {
-        axios.get("http://localhost:5233/view-list-ticket", config)
+        axios.get("https://cinema.dummywebsite.me/view-list-ticket", config)
             .then(res => {
                 const listTicket = res.data;
                 setTicket(listTicket)

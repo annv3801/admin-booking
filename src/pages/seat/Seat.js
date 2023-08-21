@@ -15,7 +15,7 @@ const Seat = () => {
         }
     };
     const res = () => {
-        axios.get("http://localhost:5233/view-list-seat", config)
+        axios.get("https://cinema.dummywebsite.me/view-list-seat", config)
             .then(res => {
                 const listSeat = res.data;
                 setSeat(listSeat)

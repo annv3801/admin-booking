@@ -29,7 +29,7 @@ const AddCategory = () => {
             shortenUrl: shortenUrl,
             status: status
         };
-        axios.post("http://localhost:5233/create-category", data, config)
+        axios.post("https://cinema.dummywebsite.me/create-category", data, config)
             .then(res => {
                 navigate("/category");
             })

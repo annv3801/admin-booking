@@ -15,7 +15,7 @@ const Theater = () => {
         }
     };
     const res = () => {
-        axios.get("http://localhost:5233/view-list-theater", config)
+        axios.get("https://cinema.dummywebsite.me/view-list-theater", config)
             .then(res => {
                 const listTheater = res.data;
                 setTheater(listTheater)

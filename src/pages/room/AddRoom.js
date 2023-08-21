@@ -31,13 +31,13 @@ const AddRoom = () => {
             theaterId: selectedTheater,
             status: status
         };
-        axios.post("http://localhost:5233/create-room", data, config)
+        axios.post("https://cinema.dummywebsite.me/create-room", data, config)
             .then(res => {
                 navigate("/room");
             })
     }
     useEffect(() => {
-        axios.get("http://localhost:5233/view-list-theater", config).then((response) => {
+        axios.get("https://cinema.dummywebsite.me/view-list-theater", config).then((response) => {
             setTheaters(response.data);
         });
     }, []);

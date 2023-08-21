@@ -37,18 +37,18 @@ const AddSchedule = () => {
             filmId: selectedFilm,
             roomId: selectedRoom,
         };
-        axios.post("http://localhost:5233/create-schedule", data, config)
+        axios.post("https://cinema.dummywebsite.me/create-schedule", data, config)
             .then(res => {
                 navigate("/schedule");
             })
     }
     useEffect(() => {
-        axios.get("http://localhost:5233/view-list-film", config).then((response) => {
+        axios.get("https://cinema.dummywebsite.me/view-list-film", config).then((response) => {
             setFilms(response.data);
         });
     }, []);
     useEffect(() => {
-        axios.get("http://localhost:5233/view-list-room", config).then((response) => {
+        axios.get("https://cinema.dummywebsite.me/view-list-room", config).then((response) => {
             setRooms(response.data);
         });
     }, []);

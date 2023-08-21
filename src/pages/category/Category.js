@@ -15,7 +15,7 @@ const Category = () => {
         }
     };
     const res = () => {
-        axios.get("http://localhost:5233/view-list-category", config)
+        axios.get("https://cinema.dummywebsite.me/view-list-category", config)
             .then(res => {
                 const listCategory = res.data;
                 setCategory(listCategory)
@@ -31,7 +31,7 @@ const Category = () => {
     // }
     let stt = 1
     const handleDelete = (id) => {
-        axios.delete("http://localhost:5233/delete-category/" + id, config)
+        axios.delete("https://cinema.dummywebsite.me/delete-category/" + id, config)
             .then(res => {
                 if (res.status === 200) {
                     window.location.reload()

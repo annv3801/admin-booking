@@ -52,7 +52,7 @@ const AddFilm = () => {
             document.getElementById("image").files[0],
         );
 
-        axios.post("http://localhost:5233/create-film", data, config, {
+        axios.post("https://cinema.dummywebsite.me/create-film", data, config, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
@@ -62,7 +62,7 @@ const AddFilm = () => {
             })
     }
     useEffect(() => {
-        axios.get("http://localhost:5233/view-list-category", config).then((response) => {
+        axios.get("https://cinema.dummywebsite.me/view-list-category", config).then((response) => {
             setCategories(response.data);
         });
     }, []);

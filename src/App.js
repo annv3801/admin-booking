@@ -18,12 +18,12 @@ import AddSeat from "./pages/seat/AddSeat";
 import Seat from "./pages/seat/Seat";
 import Ticket from "./pages/ticket/Ticket";
 import AddTicket from "./pages/ticket/AddTicket";
+import Booking from "./pages/booking/Booking";
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout><Dashboard /></Layout>} />
-            <Route path="/customers" element={<Layout><Customers /></Layout>} />
 
             <Route path="/category" element={<Layout><Category /></Layout>} />
             <Route path="/add-category" element={<Layout><AddCategory /></Layout>} />
@@ -46,6 +46,7 @@ const App = () => {
                 <Route path="/ticket" element={<Layout><Ticket /></Layout>} />
                 <Route path="/add-ticket" element={<Layout><AddTicket /></Layout>} />
 
+            <Route path="/booking" element={<Layout><Booking /></Layout>} />
 
 
             <Route path="/login" element={<Login></Login>} />

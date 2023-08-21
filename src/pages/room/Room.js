@@ -15,7 +15,7 @@ const Room = () => {
         }
     };
     const res = () => {
-        axios.get("http://localhost:5233/view-list-room", config)
+        axios.get("https://cinema.dummywebsite.me/view-list-room", config)
             .then(res => {
                 const listRoom = res.data;
                 setRoom(listRoom)
@@ -27,7 +27,7 @@ const Room = () => {
     useEffect(() => res(), []);
     let stt = 1
     const handleDelete = (id) => {
-        axios.delete("http://localhost:5233/delete-room" + id, config)
+        axios.delete("https://cinema.dummywebsite.me/delete-room" + id, config)
             .then(res => {
                 if (res.status === 200) {
                     window.location.reload()

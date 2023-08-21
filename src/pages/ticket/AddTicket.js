@@ -35,13 +35,13 @@ const AddTicket = () => {
             type: type,
 
         };
-        axios.post("http://localhost:5233/create-ticket", data, config)
+        axios.post("https://cinema.dummywebsite.me/create-ticket", data, config)
             .then(res => {
                 navigate("/ticket");
             })
     }
     useEffect(() => {
-        axios.get("http://localhost:5233/view-list-schedule", config).then((response) => {
+        axios.get("https://cinema.dummywebsite.me/view-list-schedule", config).then((response) => {
             setSchedule(response.data);
             console.log(response.data)
         });
